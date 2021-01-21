@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: e003b35aa1b39b1488f5bd8e5772c94d
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: CH_Head
+  - first:
+      1: 100002
+    second: CH_Hips
+  - first:
+      1: 100004
+    second: CH_LeftArm
+  - first:
+      1: 100006
+    second: CH_LeftFoot
+  - first:
+      1: 100008
+    second: CH_LeftForeArm
+  - first:
+      1: 100010
+    second: CH_LeftHand
+  - first:
+      1: 100012
+    second: CH_LeftLeg
+  - first:
+      1: 100014
+    second: CH_LeftShoulder
+  - first:
+      1: 100016
+    second: CH_LeftToeBase
+  - first:
+      1: 100018
+    second: CH_LeftUpLeg
+  - first:
+      1: 100020
+    second: CH_Neck
+  - first:
+      1: 100022
+    second: CH_Reference
+  - first:
+      1: 100024
+    second: CH_RightArm
+  - first:
+      1: 100026
+    second: CH_RightFoot
+  - first:
+      1: 100028
+    second: CH_RightForeArm
+  - first:
+      1: 100030
+    second: CH_RightHand
+  - first:
+      1: 100032
+    second: CH_RightLeg
+  - first:
+      1: 100034
+    second: CH_RightShoulder
+  - first:
+      1: 100036
+    second: CH_RightToeBase
+  - first:
+      1: 100038
+    second: CH_RightUpLeg
+  - first:
+      1: 100040
+    second: CH_Spine
+  - first:
+      1: 100042
+    second: CH_Spine1
+  - first:
+      1: 100044
+    second: //RootNode
+  - first:
+      1: 100046
+    second: Haruko_body
+  - first:
+      4: 400000
+    second: CH_Head
+  - first:
+      4: 400002
+    second: CH_Hips
+  - first:
+      4: 400004
+    second: CH_LeftArm
+  - first:
+      4: 400006
+    second: CH_LeftFoot
+  - first:
+      4: 400008
+    second: CH_LeftForeArm
+  - first:
+      4: 400010
+    second: CH_LeftHand
+  - first:
+      4: 400012
+    second: CH_LeftLeg
+  - first:
+      4: 400014
+    second: CH_LeftShoulder
+  - first:
+      4: 400016
+    second: CH_LeftToeBase
+  - first:
+      4: 400018
+    second: CH_LeftUpLeg
+  - first:
+      4: 400020
+    second: CH_Neck
+  - first:
+      4: 400022
+    second: CH_Reference
+  - first:
+      4: 400024
+    second: CH_RightArm
+  - first:
+      4: 400026
+    second: CH_RightFoot
+  - first:
+      4: 400028
+    second: CH_RightForeArm
+  - first:
+      4: 400030
+    second: CH_RightHand
+  - first:
+      4: 400032
+    second: CH_RightLeg
+  - first:
+      4: 400034
+    second: CH_RightShoulder
+  - first:
+      4: 400036
+    second: CH_RightToeBase
+  - first:
+      4: 400038
+    second: CH_RightUpLeg
+  - first:
+      4: 400040
+    second: CH_Spine
+  - first:
+      4: 400042
+    second: CH_Spine1
+  - first:
+      4: 400044
+    second: //RootNode
+  - first:
+      4: 400046
+    second: Haruko_body
+  - first:
+      43: 4300000
+    second: Haruko_body
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Haruko_body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Haruko_mat
+    second: {fileID: 2100000, guid: 20a722d021ea1574d896521a3f750f29, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: CH_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CH_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Haruko(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CH_Reference
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CH_Hips
+      parentName: 
+      position: {x: -0, y: 0.0065703313, z: 0.0005430649}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftUpLeg
+      parentName: 
+      position: {x: -0.0013844451, y: -0.0012332274, z: -0.0000031781678}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftLeg
+      parentName: 
+      position: {x: 3.814698e-10, y: -0.002362618, z: -0.00015188758}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+    - name: CH_LeftFoot
+      parentName: 
+      position: {x: 1.9073486e-10, y: -0.0020547227, z: -0.00011361767}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftToeBase
+      parentName: 
+      position: {x: -5.7220456e-10, y: -0.0007285696, z: 0.00040274038}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightUpLeg
+      parentName: 
+      position: {x: 0.0013844451, y: -0.0012332274, z: -0.0000031781678}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+    - name: CH_RightLeg
+      parentName: 
+      position: {x: -6.675723e-10, y: -0.0023626462, z: -0.00015146915}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: CH_RightFoot
+      parentName: 
+      position: {x: -5.7220456e-10, y: -0.002054698, z: -0.000114036615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightToeBase
+      parentName: 
+      position: {x: 5.7220456e-10, y: -0.0007285696, z: 0.00040274038}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_Spine
+      parentName: 
+      position: {x: -0, y: 0.0010520485, z: -0.000022772363}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_Spine1
+      parentName: 
+      position: {x: -0, y: 0.0015435899, z: -0.00015548112}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftShoulder
+      parentName: 
+      position: {x: -0.00073228386, y: 0.0008350261, z: -0.00029392375}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftArm
+      parentName: 
+      position: {x: -0.001198581, y: -0.00036963055, z: 6.661338e-20}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftForeArm
+      parentName: 
+      position: {x: -0.0020955463, y: -0.000000045964388, z: 0.000000074537}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_LeftHand
+      parentName: 
+      position: {x: -0.00141727, y: 2.316369e-16, z: -0.0000000025088005}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightShoulder
+      parentName: 
+      position: {x: 0.00073228386, y: 0.0008350261, z: -0.00029392375}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightArm
+      parentName: 
+      position: {x: 0.001198581, y: -0.00036963055, z: 6.661338e-20}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightForeArm
+      parentName: 
+      position: {x: 0.0020955463, y: -0.000000045964377, z: 0.000000074818026}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_RightHand
+      parentName: 
+      position: {x: 0.00141727, y: 2.2879474e-16, z: -0.0000000025088005}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CH_Neck
+      parentName: 
+      position: {x: -0, y: 0.0015435907, z: -0.00036481186}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CH_Head
+      parentName: 
+      position: {x: -0, y: 0.00068795914, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: Haruko_body
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.02
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
