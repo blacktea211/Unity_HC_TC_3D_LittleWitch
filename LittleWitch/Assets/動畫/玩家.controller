@@ -204,7 +204,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u8DF3\u8E8D\u5F80\u4E0A"
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2032089801557421020}
@@ -333,7 +333,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u843D\u5730"
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2453384353630768825}
@@ -641,7 +641,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: "\u662F\u5426\u843D\u5230\u5730\u9762"
+  - m_Name: "\u662F\u5426\u5728\u5730\u9762\u4E0A"
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -890,7 +890,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: "\u662F\u5426\u843D\u5230\u5730\u9762"
+    m_ConditionEvent: "\u662F\u5426\u5728\u5730\u9762\u4E0A"
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4853229306190704962}
@@ -1125,7 +1125,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u8DF3\u8E8D\u8D77\u6B65"
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7392729293869017623}

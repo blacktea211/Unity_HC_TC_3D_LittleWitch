@@ -17,6 +17,10 @@ public class player : MonoBehaviour
     public float radius = 1f;
     [Header("檢查地板球體位移")]
     public Vector3 offset;
+    [Header("跳愈次數限制")]
+    public int jumpCountLimit=2;
+
+    private int jumpCount;                                         // 記錄玩家跳躍次數
 
 
     /// <summary>
@@ -102,12 +106,21 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)    // 按空白鍵且在地上
         {
-           rig.AddForce(Vector3.up * jump);                 // 向上 推力
+            jumpCount++;                                    // 跳躍
+            rig.Sleep();                                    // 睡著 - 先將鋼體關閉
+            rig.WakeUp();                                   // 醒來 - 開啟鋼體
+            rig.AddForce(Vector3.up * jump);                // 向上 推力
+            ani.SetTrigger("跳躍觸發");
         }
 
         // 碰撞物件陣列 = 物理 . 球體碰撞範圍 (中心點 , 半徑 , 圖層)
         Collider[] hit = Physics.OverlapSphere(transform.position + offset, radius, 1 << 8);
-        if (hit.Length > 0 && hit[0]) onGround = true;      // 如果 碰到物件陣列數量 > 0 且存在 ， 就設定在地面上
+        if (hit.Length > 0 && hit[0])     
+        {
+            onGround = true;                                // 如果 碰到物件陣列數量 > 0 且存在 ， 就設定在地面上
+            jumpCount = 0;
+        }
         else onGround = false;                              // 球體碰到地面，就設定為 不在地上
+        ani.SetBool("是否在地面上", onGround);
     }
 }
