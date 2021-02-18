@@ -8,9 +8,14 @@ public class PropManager : MonoBehaviour
     public GameObject objClose;
     [Header("玩家面向寶箱角度範圍")]
     public float faceRange = 10;
+    [Header("補血特效")]
+    public GameObject objHp;
+    [Header("治癒的值")]
+    public float cure = 50;
 
     private bool playerIn;
     private Transform player;
+    private bool open;
 
     /// <summary>
     /// 打開道具
@@ -20,11 +25,14 @@ public class PropManager : MonoBehaviour
         // Vector3.Angle(向量1，向量2)
         // 取得兩條向量線的夾角
 
-        // 如果 (偵測到玩家 && 按滑鼠左鍵 &&向量夾角 (玩家前方,寶箱位置-玩家位置)<玩家面向寶箱角度範圍)
-        if (playerIn && Input.GetKeyDown(KeyCode.Mouse0)&& Vector3.Angle(player.forward,transform.position-player.position)<faceRange)
+        // 如果 (沒開寶箱 && 偵測到玩家 && 按滑鼠左鍵 &&向量夾角 (玩家前方,寶箱位置-玩家位置)<玩家面向寶箱角度範圍)
+        if (!open && playerIn && Input.GetKeyDown(KeyCode.Mouse0)&& Vector3.Angle(player.forward,transform.position-player.position)<faceRange)
         {
+            open = true;                                  // 判定寶箱已開啟
             objClose.SetActive(false);
             objOpen.SetActive(true);
+            objHp.SetActive(true);
+            player.GetComponent<player>().Cure(cure);
         }
     }
 
