@@ -1,10 +1,12 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    #region 基本數值
     [Header("跑步移動速度"), Range(0, 1000)]
     public float speed = 10;
     [Header("走路移動速度"), Range(0, 1000)]
@@ -23,6 +25,7 @@ public class player : MonoBehaviour
     public Vector3 offset;
     [Header("跳愈次數限制")]
     public int jumpCountLimit = 2;
+   
 
     private int jumpCount;                                         // 記錄玩家跳躍次數
 
@@ -48,8 +51,9 @@ public class player : MonoBehaviour
     public float spJump=5;
     [Header("停止時每秒恢復體力"), Range(0, 5000)]
     public float spRecover=10;
+    
 
-       
+
     /// <summary>
     /// 判斷是否落地
     /// </summary>
@@ -59,7 +63,31 @@ public class player : MonoBehaviour
     private Transform cam;
     private float x;
     private float y;
+    #endregion
 
+    #region 攻擊參數
+    [Header("生成攻擊特效位置")]
+    public Transform attackPoint;
+    [Header("攻擊特效")]
+    public GameObject attackPS;
+    [Header("攻擊特效速度")]
+    public float attackSpeed = 500;
+    [Header("攻擊力")]
+    public float attack = 50;
+    [Header("攻擊魔力消耗")]
+    public float attackCost = 20;
+    [Header("生成攻擊特效延遲")]
+    public float attackPSDeplay = 0.15f;
+    [Header("生成多久後可進行下次攻擊")]
+    public float attackDeplay = 2f;
+
+    /// <summary>
+    /// 是否攻擊中
+    /// </summary>
+    private bool attacking;
+    #endregion
+
+    #region 事件
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1,0,0,0.5f);                       // 射線顏色 50% 紅
@@ -80,10 +108,13 @@ public class player : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if (attacking) return;
+
+        Move();                      //
         Turncamera();
-        Jump();
+        Jump();                     //
         spSystem();
+        Attack();
 
         //扣血測試
         if (Input.GetKeyDown(KeyCode.Alpha1)) Cure(-10) ;
@@ -95,7 +126,40 @@ public class player : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-       
+                               
+    }
+
+    #endregion
+
+    #region 方法
+
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && mp > attackCost && !attacking)                 // 按下左鍵 且 mp > 魔力消耗 且 不在攻擊中
+        {
+            StartCoroutine(AttackTimeControl());
+        }
+    }
+
+    /// <summary>
+    /// 攻擊時間控制，協成
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator AttackTimeControl()
+    {
+        rig.velocity = Vector3.zero;                                                            // 鋼體向量位置歸0，玩家才不會邊滑步邊攻擊
+        attacking = true;                                                                       // 正在攻擊中
+        mp -= attackCost;                                                                        // 扣mp
+        barMp.fillAmount = mp / mpMax;                                                         // 更新mp介面
+
+        ani.SetTrigger("攻擊觸發");
+        yield return new WaitForSeconds(attackPSDeplay);                                        // 延遲攻擊特效
+
+        GameObject temp = Instantiate(attackPS, attackPoint.position, attackPoint.rotation);    // 生成攻擊特效在位置上
+        temp.GetComponent<Rigidbody>().AddForce(transform.forward * attackSpeed);               // 取得攻擊特效並添加推力
+
+        yield return new WaitForSeconds(attackDeplay);                                          // 延遲再次攻擊
+        attacking = false;                                                                      // 沒在攻擊
     }
 
 
@@ -211,4 +275,5 @@ public class player : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, hpMax);         // 夾住 血量 (血量 , 0 , hpMax)
         barHp.fillAmount = hp / hpMax;          // 更新血條
     }
+    #endregion
 }

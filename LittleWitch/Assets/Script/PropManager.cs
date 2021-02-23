@@ -32,7 +32,7 @@ public class PropManager : MonoBehaviour
             objClose.SetActive(false);
             objOpen.SetActive(true);
             objHp.SetActive(true);
-            player.GetComponent<player>().Cure(cure);
+            player.GetComponent<Player>().Cure(cure);
         }
     }
 
