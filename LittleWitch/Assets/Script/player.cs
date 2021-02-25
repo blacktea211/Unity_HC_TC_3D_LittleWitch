@@ -275,5 +275,12 @@ public class Player : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, hpMax);         // 夾住 血量 (血量 , 0 , hpMax)
         barHp.fillAmount = hp / hpMax;          // 更新血條
     }
+
+    public void Damage(float getDamege)
+    {
+        ani.SetTrigger("傷害觸發");
+        hp = -getDamege;
+        barHp.fillAmount = hp / hpMax;
+    }
     #endregion
 }
