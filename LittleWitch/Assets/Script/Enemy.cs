@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     public float attackDelay;
     [Header("攻擊力"),Range(0,100)]
     public float attack=30;
+    [Header("血量)"), Range(0, 10000)]
+    public float hp = 3000;
 
     private Animator ani;
     private Transform player;
@@ -47,11 +49,13 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawSphere(transform.position, rangeAttack);
         // 攻擊球體範圍 (位置 + 位移，半徑)
         Gizmos.color = new Color(0, 1, 1, 0.3f);
-        Gizmos.DrawSphere(transform.position + attackOffset, attackRadius);
+        Gizmos.DrawSphere(transform.position + transform.forward * attackOffset.z + transform.right * attackOffset.x, attackRadius);
     }
 
     private void Update()
-    {
+    {   // 如果 正在攻擊中就跳出
+        // 如果 取得目前動畫控制器的狀態(0=>沒設置圖層=>Base Layer).攻擊 => 跳出 不 Track()
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("攻擊")) return;
         Track();
     }
 
@@ -93,6 +97,9 @@ public class Enemy : MonoBehaviour
         else
         {
             timer = timer + Time.deltaTime;      // 累加時間
+            Vector3 pos = player.position;       // 座標 = 取得玩家座標
+            pos.y = transform.position.y;        // 玩家 y軸 改為 怪物y軸 
+            transform.LookAt(pos);               // 面向 (修改後的座標)     ，LookAt 面向API
         }
 
         nma.isStopped = true;
@@ -104,7 +111,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(attackDelay);
             // 碰撞陣列 = 物理.覆蓋球體(位置 + 位移，半徑，只碰撞到圖層9(玩家))
-            Collider[] hits = Physics.OverlapSphere(transform.position + attackOffset, attackRadius, 1 << 9);
+            Collider[] hits = Physics.OverlapSphere(transform.position + transform.forward * attackOffset.z + transform.right * attackOffset.x, attackRadius, 1 << 9);
 
             // 如果打到超過1個東西 => 打到.抓取玩家腳本的傷害(攻擊值)
             if (hits.Length > 1)
@@ -115,5 +122,27 @@ public class Enemy : MonoBehaviour
 
 
         }
+
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="getDamege"></param>
+    public void Damage(float getDamege)
+    {
+        ani.SetTrigger("受傷觸發");
+        hp = -getDamege;
+        if (hp <= 0) Dead();
     }
+
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    private void Dead()
+    {
+        hp = 0;
+        ani.SetBool("死亡開關", true);
+        enabled = false;
+    }
+}
 

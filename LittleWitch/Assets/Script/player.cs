@@ -95,12 +95,18 @@ public class Player : MonoBehaviour
                                                                     // 有些角色模組的中心點在身體不在雙腳附近，可從介面調整位移將球體射線移到雙腳
     }
 
+    /// <summary>
+    /// 結束畫面
+    /// </summary>
+    private CanvasGroup final;
+
     // 喚醒事件：在 Start 前執行一次
     private void Awake()
     {
         ani = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
         cam = GameObject.Find("攝影機根物件").transform;
+        final= GameObject.Find("結束畫面").GetComponent<CanvasGroup>();
         hpMax = hp;
         mpMax = mp;
         spMax = sp;
@@ -157,6 +163,7 @@ public class Player : MonoBehaviour
 
         GameObject temp = Instantiate(attackPS, attackPoint.position, attackPoint.rotation);    // 生成攻擊特效在位置上
         temp.GetComponent<Rigidbody>().AddForce(transform.forward * attackSpeed);               // 取得攻擊特效並添加推力
+        temp.GetComponent<Magic>().attack = attack;
 
         yield return new WaitForSeconds(attackDeplay);                                          // 延遲再次攻擊
         attacking = false;                                                                      // 沒在攻擊
@@ -276,11 +283,47 @@ public class Player : MonoBehaviour
         barHp.fillAmount = hp / hpMax;          // 更新血條
     }
 
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="getDamege"></param>
     public void Damage(float getDamege)
     {
-        ani.SetTrigger("傷害觸發");
+        ani.SetTrigger("受傷觸發");
         hp = -getDamege;
         barHp.fillAmount = hp / hpMax;
+        if (hp <= 0) Dead();
+    }
+
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    private void Dead()
+    {
+        hp = 0;
+        ani.SetBool("死亡開關",true);
+        enabled = false;
+        StartCoroutine(ShowFinal());
+    }
+
+    /// <summary>
+    /// 結束畫面
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator ShowFinal()
+    {
+        final.interactable = true;          // 將 interactable 打勾，可以互動
+        final.blocksRaycasts = true;        // 將 blocksRaycasts 打勾，開啟遮擋，滑鼠才能點到
+        float a = final.alpha;              // 取得 透明度
+
+        // while (布林值) {程式區域}
+        while (a<1)
+        {
+            a += 0.1f;
+            final.alpha = a;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
     #endregion
 }
