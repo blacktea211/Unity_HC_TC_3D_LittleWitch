@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
     public float spJump=5;
     [Header("停止時每秒恢復體力"), Range(0, 5000)]
     public float spRecover=10;
-    
+    [Header("停止攻擊時每秒恢復魔力"), Range(0, 5000)]
+    public float mpRecover = 10;
 
 
     /// <summary>
@@ -167,7 +168,13 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(attackDeplay);                                          // 延遲再次攻擊
         attacking = false;                                                                      // 沒在攻擊
+
+        mp += mpRecover * Time.deltaTime;
+        barMp.fillAmount = mp / mpMax;
+        mp = Mathf.Clamp(mp, 0, mpMax);
     }
+
+ 
 
 
     /// <summary>
